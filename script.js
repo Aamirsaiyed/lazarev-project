@@ -1,3 +1,4 @@
+
 function page2Animation() {
     var rightElems = document.querySelectorAll(".right-elem");
     console.log(rightElems);
@@ -81,6 +82,32 @@ function page5VideoAnimation() {
 
 page5VideoAnimation();
 
+
+
+function loadingAnimation() {
+    var tl = gsap.timeline();
+    tl.from("#page1", {
+        opacity: 0,
+        duration: 0.2,
+        delay: 0.2,
+    });
+    tl.from("#page1", {
+        transform: "scaleX(0.7) scaleY(0.2) translateY(80%)",
+        borderRadius: "150px",
+        duration: 2,
+        ease: "expo.out",
+    });
+    tl.from("nav", {
+        opacity: 0,
+        delay: -0.2,
+    });
+    tl.from("#page1 h1, #page1 p, #page1 div", {
+        opacity: 0,
+        duration: 0.5,
+        stagger: 0.2,
+    });
+}
+loadingAnimation();
 
 gsap.from(".btm7-parts h4", {
     x: 0,
